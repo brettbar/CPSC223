@@ -1,0 +1,411 @@
+*********************************************************************************
+		CASE OF NO PIVOT
+
+Test 1: CASE OF EMPTY TREE:
+
+Pre-insert Tree:
+Now inserting 150:
+Post-insert Tree:
+root -> 150:0
+
+Test 2: CASE OF FULL TREE OF HEIGHT 2
+Pre-insert Tree:
+            175:0
+            /
+root -> 150:0
+            \
+            125:0
+Now inserting 100:
+Post-insert Tree:
+            175:0
+            /
+root -> 150:-1
+            \
+            125:-1
+                        \
+                        100:0
+
+Test 3: CASE OF FULL TREE OF HEIGHT 3
+Pre-insert Tree:
+                        199:0
+                        /
+            175:0
+                        \
+                        160:0
+            /
+root -> 150:0
+            \
+                        135:0
+                        /
+            125:0
+                        \
+                        100:0
+Now inserting 145:
+Post-insert Tree:
+                        199:0
+                        /
+            175:0
+                        \
+                        160:0
+            /
+root -> 150:-1
+            \
+                                    145:0
+                                    /
+                        135:1
+                        /
+            125:1
+                        \
+                        100:0
+
+
+		CASE OF IS ADDED TO SHORT SIDE
+
+Test 1: TREE HEIGHT 2 AND LEFT SIDE INSERT
+Pre-insert Tree:
+            275:0
+            /
+root -> 250:1
+Now inserting 225:
+Post-insert Tree:
+            275:0
+            /
+root -> 250:0
+            \
+            225:0
+
+Test 2: TREE HEIGHT 3, LEFT RIGHT INSERT
+Pre-insert Tree:
+            275:0
+            /
+root -> 250:-1
+            \
+            225:-1
+                        \
+                        200:0
+Now inserting 235:
+Post-insert Tree:
+            275:0
+            /
+root -> 250:-1
+            \
+                        235:0
+                        /
+            225:0
+                        \
+                        200:0
+
+Test 3: TREE HEIGHT 3, RIGHT RIGHT INSERT
+Pre-insert Tree:
+            275:0
+            /
+root -> 250:-1
+            \
+                        235:0
+                        /
+            225:0
+                        \
+                        200:0
+Now inserting 299:
+Post-insert Tree:
+                        299:0
+                        /
+            275:1
+            /
+root -> 250:0
+            \
+                        235:0
+                        /
+            225:0
+                        \
+                        200:0
+
+Test 4: TREE HEIGHT 3, RIGHT LEFT INSERT
+Pre-insert Tree:
+                        299:0
+                        /
+            275:1
+            /
+root -> 250:0
+            \
+                        235:0
+                        /
+            225:0
+                        \
+                        200:0
+Now inserting 270:
+Post-insert Tree:
+                        299:0
+                        /
+            275:0
+                        \
+                        270:0
+            /
+root -> 250:0
+            \
+                        235:0
+                        /
+            225:0
+                        \
+                        200:0
+
+		CASE OF SINGLE ROTATE LEFT
+
+Test 1: TREE HEIGHT 3, DEGENERATE
+Pre-insert Tree:
+            375:0
+            /
+root -> 350:1
+Now inserting 380:
+Post-insert Tree:
+            380:0
+            /
+root -> 375:0
+            \
+            350:0
+
+Test 2: TREE HEIGHT 3, LEFT RIGHT RIGHT INSERT
+Pre-insert Tree:
+            380:0
+            /
+root -> 375:-1
+            \
+                        360:0
+                        /
+            350:1
+Now inserting 370:
+Post-insert Tree:
+            380:0
+            /
+root -> 375:-1
+            \
+                        370:0
+                        /
+            360:0
+                        \
+                        350:0
+
+Test 3: TREE HEIGHT 4, RIGHT RIGHT RIGHT INSERT
+Pre-insert Tree:
+                        385:0
+                        /
+            380:1
+            /
+root -> 375:0
+            \
+                        370:0
+                        /
+            360:0
+                        \
+                        350:0
+Now inserting 390:
+Post-insert Tree:
+                        390:0
+                        /
+            385:0
+                        \
+                        380:0
+            /
+root -> 375:0
+            \
+                        370:0
+                        /
+            360:0
+                        \
+                        350:0
+
+		CASE OF SINGLE ROTATE RIGHT
+
+Test 1: TREE HEIGHT 3, DEGENERATE
+Pre-insert Tree:
+root -> 450:-1
+            \
+            425:0
+Now inserting 410:
+Post-insert Tree:
+            450:0
+            /
+root -> 425:0
+            \
+            410:0
+
+Test 2: TREE HEIGHT 3, RIGHT LEFT LEFT INSERT
+Pre-insert Tree:
+            450:-1
+                        \
+                        440:0
+            /
+root -> 425:1
+            \
+            410:0
+Now inserting 430:
+Post-insert Tree:
+                        450:0
+                        /
+            440:0
+                        \
+                        430:0
+            /
+root -> 425:1
+            \
+            410:0
+
+Test 3: TREE HEIGHT 4, LEFT LEFT LEFT INSERT
+Pre-insert Tree:
+                        450:0
+                        /
+            440:0
+                        \
+                        430:0
+            /
+root -> 425:0
+            \
+            410:-1
+                        \
+                        405:0
+Now inserting 400:
+Post-insert Tree:
+                        450:0
+                        /
+            440:0
+                        \
+                        430:0
+            /
+root -> 425:0
+            \
+                        410:0
+                        /
+            405:0
+                        \
+                        400:0
+
+		CASE OF DOUBLE ROTATE LEFT RIGHT
+
+Test 1: TREE HEIGHT 2, DEGENERATE
+Pre-insert Tree:
+root -> 550:-1
+            \
+            525:0
+Now inserting 530:
+Post-insert Tree:
+            550:0
+            /
+root -> 530:0
+            \
+            525:0
+
+Test 2: TREE HEIGHT 3, LEFT RIGHT INSERT
+Pre-insert Tree:
+            550:0
+            /
+root -> 530:-1
+            \
+            525:-1
+                        \
+                        505:0
+Now inserting 510:
+Post-insert Tree:
+            550:0
+            /
+root -> 530:-1
+            \
+                        525:0
+                        /
+            510:0
+                        \
+                        505:0
+
+Test 3: TREE HEIGHT 3, RIGHT LEFT RIGHT INSERT
+Pre-insert Tree:
+            550:-1
+                        \
+                        540:0
+            /
+root -> 530:0
+            \
+                        525:0
+                        /
+            510:0
+                        \
+                        505:0
+Now inserting 545:
+Post-insert Tree:
+                        550:0
+                        /
+            545:0
+                        \
+                        540:0
+            /
+root -> 530:0
+            \
+                        525:0
+                        /
+            510:0
+                        \
+                        505:0
+
+		CASE OF DOUBLE ROTATE RIGHT LEFT
+
+Test 1: TREE HEIGHT 2, DEGENERATE
+Pre-insert Tree:
+            675:0
+            /
+root -> 650:1
+Now inserting 670:
+Post-insert Tree:
+            675:0
+            /
+root -> 670:0
+            \
+            650:0
+
+Test 2: TREE HEIGHT 3, RIGHT LEFT INSERT
+Pre-insert Tree:
+                        685:0
+                        /
+            675:1
+            /
+root -> 670:1
+            \
+            650:0
+Now inserting 680:
+Post-insert Tree:
+                        685:0
+                        /
+            680:0
+                        \
+                        675:0
+            /
+root -> 670:1
+            \
+            650:0
+
+Test 3: TREE HEIGHT 3, LEFT RIGHT LEFT INSERT
+Pre-insert Tree:
+                        685:0
+                        /
+            680:0
+                        \
+                        675:0
+            /
+root -> 670:0
+            \
+                        655:0
+                        /
+            650:1
+Now inserting 660:
+Post-insert Tree:
+                        685:0
+                        /
+            680:0
+                        \
+                        675:0
+            /
+root -> 670:0
+            \
+                        660:0
+                        /
+            655:0
+                        \
+                        650:0
+*********************************************************************************

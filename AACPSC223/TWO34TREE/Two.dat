@@ -1,0 +1,604 @@
+		CASE 1 OF INSERT: INTO ROOT NO SPLITTING
+
+SUBCASE 1: insert(100) , insert(105), insert (110)
+Pre-insert Tree:
+
+root-> (100,105)
+Now inserting 110
+
+Post-insert Tree:
+
+root-> (100,105,110)
+
+SUBCASE 2: insert(105) , insert(100), insert (110)
+Pre-insert Tree:
+
+root-> (100,105)
+Now inserting 110
+
+Post-insert Tree:
+
+root-> (100,105,110)
+
+SUBCASE 3: insert(105) , insert(110), insert (100)
+Pre-insert Tree:
+
+root-> (105,110)
+Now inserting 100
+
+Post-insert Tree:
+
+root-> (100,105,110)
+
+SUBCASE 4: insert(100) , insert(110), insert (105)
+Pre-insert Tree:
+
+root-> (100,110)
+Now inserting 105
+
+Post-insert Tree:
+
+root-> (100,105,110)
+
+SUBCASE 5: insert(110) , insert(105), insert (100)
+Pre-insert Tree:
+
+root-> (105,110)
+Now inserting 100
+
+Post-insert Tree:
+
+root-> (100,105,110)
+
+SUBCASE 6: insert(110) , insert(100), insert (105)
+Pre-insert Tree:
+
+root-> (100,110)
+Now inserting 105
+
+Post-insert Tree:
+
+root-> (100,105,110)
+
+		CASE 2 OF INSERT: ROOT SPLIT AND INSERT
+
+SUBCASE 1: Splitting root, inserting into left
+Pre-insert Tree:
+
+root-> (225,250,275)
+Now inserting 210
+
+Post-insert Tree:
+
+                (275)
+root-> (250)
+                (210,225)
+
+SUBCASE 2: Splitting root, inserting into left
+Pre-insert Tree:
+
+root-> (225,250,275)
+Now inserting 230
+
+Post-insert Tree:
+
+                (275)
+root-> (250)
+                (225,230)
+
+SUBCASE 3: Splitting root, inserting into right
+Pre-insert Tree:
+
+root-> (225,250,275)
+Now inserting 255
+
+Post-insert Tree:
+
+                (255,275)
+root-> (250)
+                (225)
+
+SUBCASE 4: Splitting root, inserting into right
+Pre-insert Tree:
+
+root-> (225,250,275)
+Now inserting 290
+
+Post-insert Tree:
+
+                (275,290)
+root-> (250)
+                (225)
+
+		CASE 3 OF INSERT: ROOT SPLIT AND INSERT
+
+SUBCASE 1: inserting into right child of a case 2 tree
+Pre-insert Tree:
+
+                (351,352)
+root-> (350)
+                (325)
+Now inserting 355
+
+Post-insert Tree:
+
+                (351,352,355)
+root-> (350)
+                (325)
+
+SUBCASE 2: inserting into left child of a case 2 tree
+Pre-insert Tree:
+
+                (351,352)
+root-> (350)
+                (325)
+Now inserting 330
+
+Post-insert Tree:
+
+                (351,352)
+root-> (350)
+                (325,330)
+
+SUBCASE 3: inserting into left child of a case 2 tree
+Pre-insert Tree:
+
+                (361,362)
+root-> (360)
+                (335)
+Now inserting 340
+
+Post-insert Tree:
+
+                (361,362)
+root-> (360)
+                (335,340)
+
+SUBCASE 4: inserting into right child of a case 2 tree
+Pre-insert Tree:
+
+                (361,362)
+root-> (360)
+                (335)
+Now inserting 365
+
+Post-insert Tree:
+
+                (361,362,365)
+root-> (360)
+                (335)
+
+
+		CASE 4 OF INSERT: LEVEL 2 NODE SPLIT
+
+
+SUBCASE 1: Splitting left node, inserting into left
+Pre-insert Tree:
+
+                (475)
+root-> (450)
+                (415,425,435)
+Now inserting 410
+
+Post-insert Tree:
+
+                (475)
+root-> (425,450)
+                (435)
+                (410,415)
+
+
+SUBCASE 2: Splitting left node, inserting into left
+Pre-insert Tree:
+
+                (475)
+root-> (450)
+                (415,425,435)
+Now inserting 420
+
+Post-insert Tree:
+
+                (475)
+root-> (425,450)
+                (435)
+                (415,420)
+
+
+SUBCASE 3: Splitting left node, inserting into middle
+Pre-insert Tree:
+
+                (475)
+root-> (450)
+                (415,425,435)
+Now inserting 430
+
+Post-insert Tree:
+
+                (475)
+root-> (425,450)
+                (430,435)
+                (415)
+
+
+SUBCASE 4: Splitting left node, inserting into middle
+Pre-insert Tree:
+
+                (475)
+root-> (450)
+                (415,425,435)
+Now inserting 440
+
+Post-insert Tree:
+
+                (475)
+root-> (425,450)
+                (435,440)
+                (415)
+
+
+SUBCASE 5: Splitting right node, inserting into middle
+Pre-insert Tree:
+
+                (465,475,485)
+root-> (450)
+                (425)
+Now inserting 460
+
+Post-insert Tree:
+
+                (485)
+root-> (450,475)
+                (460,465)
+                (425)
+
+
+SUBCASE 6: Splitting right node, inserting into middle
+Pre-insert Tree:
+
+                (465,475,485)
+root-> (450)
+                (425)
+Now inserting 470
+
+Post-insert Tree:
+
+                (485)
+root-> (450,475)
+                (465,470)
+                (425)
+
+
+SUBCASE 7: Splitting right node, inserting into right
+Pre-insert Tree:
+
+                (465,475,485)
+root-> (450)
+                (425)
+Now inserting 480
+
+Post-insert Tree:
+
+                (480,485)
+root-> (450,475)
+                (465)
+                (425)
+
+
+SUBCASE 8: Splitting right node, inserting into right
+Pre-insert Tree:
+
+                (465,475,485)
+root-> (450)
+                (425)
+Now inserting 490
+
+Post-insert Tree:
+
+                (485,490)
+root-> (450,475)
+                (465)
+                (425)
+
+
+		CASE 5 OF INSERT: INSERTING TO THREE CHILDREN
+
+
+SUBCASE 1: Inserting into left node
+Pre-insert Tree:
+
+                (575)
+root-> (525,550)
+                (535)
+                (505,515)
+Now inserting 500
+
+Post-insert Tree:
+
+                (575)
+root-> (525,550)
+                (535)
+                (500,505,515)
+
+
+SUBCASE 2: Inserting into middle node
+Pre-insert Tree:
+
+                (575)
+root-> (525,550)
+                (535)
+                (500,505,515)
+Now inserting 530
+
+Post-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,535)
+                (500,505,515)
+
+
+SUBCASE 3: Inserting into middle node
+Pre-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,535)
+                (500,505,515)
+Now inserting 540
+
+Post-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,535,540)
+                (500,505,515)
+
+
+SUBCASE 4: Inserting into right node
+Pre-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,535,540)
+                (500,505,515)
+Now inserting 560
+
+Post-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,560,540)
+                (500,505,515)
+
+
+SUBCASE 5: Inserting into right node
+Pre-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,560,540)
+                (500,505,515)
+Now inserting 570
+
+Post-insert Tree:
+
+                (575)
+root-> (525,550)
+                (530,570,540)
+                (500,505,515)
+
+
+		CASE 6 OF INSERT: SPLIT RESULTING IN FOUR CHILDREN
+
+
+SUBCASE 1: Splitting left node, inserting into left
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (635)
+                (602,605,615)
+Now inserting 601
+
+Post-insert Tree:
+
+                (675)
+                (635)
+root-> (605,625,650)
+                (615)
+                (601,602)
+
+
+SUBCASE 2: Splitting left node, inserting into left
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (635)
+                (602,605,615)
+Now inserting 603
+
+Post-insert Tree:
+
+                (675)
+                (635)
+root-> (605,625,650)
+                (615)
+                (602,603)
+
+
+SUBCASE 3: Splitting left node, inserting into right
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (635)
+                (602,605,615)
+Now inserting 610
+
+Post-insert Tree:
+
+                (675)
+                (635)
+root-> (605,625,650)
+                (610,615)
+                (602)
+
+
+SUBCASE 4: Splitting left node, inserting into right
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (635)
+                (602,605,615)
+Now inserting 620
+
+Post-insert Tree:
+
+                (675)
+                (635)
+root-> (605,625,650)
+                (615,620)
+                (602)
+
+
+SUBCASE 5: Splitting middle node, inserting into left
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (630,635,640)
+                (615)
+Now inserting 628
+
+Post-insert Tree:
+
+                (675)
+                (640)
+root-> (625,635,650)
+                (628,630)
+                (615)
+
+
+SUBCASE 6: Splitting middle node, inserting into left
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (630,635,640)
+                (615)
+Now inserting 632
+
+Post-insert Tree:
+
+                (675)
+                (640)
+root-> (625,635,650)
+                (630,632)
+                (615)
+
+
+SUBCASE 7: Splitting middle node, inserting into right
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (630,635,640)
+                (615)
+Now inserting 638
+
+Post-insert Tree:
+
+                (675)
+                (638,640)
+root-> (625,635,650)
+                (630)
+                (615)
+
+
+SUBCASE 8: Splitting middle node, inserting into right
+Pre-insert Tree:
+
+                (675)
+root-> (625,650)
+                (630,635,640)
+                (615)
+Now inserting 642
+
+Post-insert Tree:
+
+                (675)
+                (640,642)
+root-> (625,635,650)
+                (630)
+                (615)
+
+
+SUBCASE 9: Splitting right node, inserting into left
+Pre-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,680)
+                (625)
+Now inserting 678
+
+Post-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,678)
+                (625)
+
+
+SUBCASE 10: Splitting right node, inserting into left
+Pre-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,680)
+                (625)
+Now inserting 682
+
+Post-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,682)
+                (625)
+
+
+SUBCASE 11: Splitting right node, inserting into right
+Pre-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,680)
+                (625)
+Now inserting 687
+
+Post-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,687)
+                (625)
+
+
+SUBCASE 12: Splitting right node, inserting into right
+Pre-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,680)
+                (625)
+Now inserting 692
+
+Post-insert Tree:
+
+                (685,690)
+root-> (650,675)
+                (665,692)
+                (625)
+
